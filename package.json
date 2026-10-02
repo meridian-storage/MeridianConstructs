@@ -1,6 +1,6 @@
 {
-  "name": "@zephytiju/meridian-storage-constructs",
-  "version": "1.6.1",
+  "name": "@juntai/meridian-storage-constructs",
+  "version": "2.0.0",
   "description": "Reusable TypeScript Pulumi constructs for Meridian deployment-time engine placement",
   "type": "module",
   "sideEffects": false,

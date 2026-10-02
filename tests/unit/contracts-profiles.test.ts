@@ -244,7 +244,7 @@ describe("released Engine profiles", () => {
   it("publishes a TypeScript-only compatibility contract", () => {
     const contract = compatibilityContract();
     expect(contract.distribution).toBe(
-      "@zephytiju/meridian-storage-constructs",
+      "@juntai/meridian-storage-constructs",
     );
     expect(contract.node).toBe(">=22");
     expect(contract.catalogRegistry).toEqual(catalogNames);

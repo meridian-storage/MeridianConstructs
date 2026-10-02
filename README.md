@@ -5,7 +5,7 @@
 [![CI](https://github.com/zephytiju/MeridianConstructs/actions/workflows/ci.yml/badge.svg)](https://github.com/zephytiju/MeridianConstructs/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/zephytiju/MeridianConstructs/actions/workflows/codeql.yml/badge.svg)](https://github.com/zephytiju/MeridianConstructs/actions/workflows/codeql.yml)
 
-`@zephytiju/meridian-storage-constructs` is the reusable TypeScript Pulumi construct library for deployment-time
+`@juntai/meridian-storage-constructs` is the reusable TypeScript Pulumi construct library for deployment-time
 Meridian Engine selection. It validates Resource placement and released Adapter capabilities,
 supports managed and external Engines through explicit provider injection, and produces a closed,
 canonical `meridian-config.v1` document plus logical Platform capability outputs.
@@ -22,7 +22,7 @@ rejection rules. Use [`createClickHouseTelemetryPlan`](docs/collector-clickhouse
 authenticated stock ingestion chain and explicit migrations for registered Meridian Resources.
 
 ```bash
-npm install @zephytiju/meridian-storage-constructs @pulumi/pulumi
+npm install @juntai/meridian-storage-constructs @pulumi/pulumi
 ```
 
 ```ts
@@ -30,7 +30,7 @@ import {
   ExternalEngine,
   getEngineProfile,
   parseResourceSelector,
-} from "@zephytiju/meridian-storage-constructs";
+} from "@juntai/meridian-storage-constructs";
 
 const profile = getEngineProfile("postgresql-postgis-local-single-primary");
 const resource = parseResourceSelector("structured:orders.records");
@@ -134,7 +134,7 @@ with coverage, compilation, and package-content inspection. See
 This release is locked to Meridian HLD revision 62, Catalogs and Public Interfaces revision 70,
 Engine Adapters revision 24, Kafka Adapter revision 6, and MeridianConstructs revision 63. The
 canonical repository is `zephytiju/MeridianConstructs`; the npm distribution is
-`@zephytiju/meridian-storage-constructs`.
+`@juntai/meridian-storage-constructs`.
 
 ## License
 

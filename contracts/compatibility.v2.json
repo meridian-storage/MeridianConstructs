@@ -28,7 +28,7 @@
     "kafkaAdapter": 6,
     "meridianConstructs": 114
   },
-  "distribution": "@zephytiju/meridian-storage-constructs",
+  "distribution": "@juntai/meridian-storage-constructs",
   "examplePackages": {
     "meridian-plugin-observability": "1.0.0",
     "meridian-storage-clickhouse": "1.0.0",

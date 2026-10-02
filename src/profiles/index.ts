@@ -769,7 +769,7 @@ export function defaultEngineProfiles(
 
 export interface CompatibilityContractV2 {
   readonly formatVersion: "meridian-storage-constructs-compatibility.v2";
-  readonly distribution: "@zephytiju/meridian-storage-constructs";
+  readonly distribution: "@juntai/meridian-storage-constructs";
   readonly node: ">=22";
   readonly designRevisions: Readonly<Record<string, number>>;
   readonly catalogRegistry: readonly CatalogName[];
@@ -784,7 +784,7 @@ export interface CompatibilityContractV2 {
 export function compatibilityContract(): CompatibilityContractV2 {
   return Object.freeze({
     formatVersion: "meridian-storage-constructs-compatibility.v2",
-    distribution: "@zephytiju/meridian-storage-constructs",
+    distribution: "@juntai/meridian-storage-constructs",
     node: ">=22",
     designRevisions: Object.freeze({
       catalogsAndPublicInterfaces: 70,

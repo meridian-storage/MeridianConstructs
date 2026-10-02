@@ -47,7 +47,7 @@ jobs:
           npm pack --ignore-scripts --pack-destination "${RUNNER_TEMP}"
           if test -n "${CONSTRUCTS_VERSION}"; then
             test "${CONSTRUCTS_VERSION}" = "$(node -p "require('./package.json').version")"
-            npm install --ignore-scripts --save-exact --prefix "${RUNNER_TEMP}/consumer" "@zephytiju/meridian-storage-constructs@${CONSTRUCTS_VERSION}"
+            npm install --ignore-scripts --save-exact --prefix "${RUNNER_TEMP}/consumer" "@juntai/meridian-storage-constructs@${CONSTRUCTS_VERSION}"
           else
             npm install --ignore-scripts --prefix "${RUNNER_TEMP}/consumer" "${RUNNER_TEMP}/zephytiju-meridian-storage-constructs-1.6.1.tgz"
           fi
@@ -57,7 +57,7 @@ jobs:
           "${RUNNER_TEMP}/runtime/bin/python" -m pip check
       - name: Compare every exported family and original sixteen cases with public Core
         env:
-          CONSTRUCTS_MODULE: ${{ runner.temp }}/consumer/node_modules/@zephytiju/meridian-storage-constructs/dist/index.js
+          CONSTRUCTS_MODULE: ${{ runner.temp }}/consumer/node_modules/@juntai/meridian-storage-constructs/dist/index.js
           MERIDIAN_ACCEPTANCE_EVIDENCE_DIR: evidence
         run: |
           "${RUNNER_TEMP}/runtime/bin/ruff" check tests/integration/released-capabilities
@@ -95,7 +95,7 @@ jobs:
           npm pack --ignore-scripts --pack-destination "${RUNNER_TEMP}"
           if test -n "${CONSTRUCTS_VERSION}"; then
             test "${CONSTRUCTS_VERSION}" = "$(node -p "require('./package.json').version")"
-            npm install --ignore-scripts --save-exact --prefix "${RUNNER_TEMP}/consumer" "@zephytiju/meridian-storage-constructs@${CONSTRUCTS_VERSION}"
+            npm install --ignore-scripts --save-exact --prefix "${RUNNER_TEMP}/consumer" "@juntai/meridian-storage-constructs@${CONSTRUCTS_VERSION}"
           else
             npm install --ignore-scripts --prefix "${RUNNER_TEMP}/consumer" "${RUNNER_TEMP}/zephytiju-meridian-storage-constructs-1.6.1.tgz"
           fi
@@ -105,7 +105,7 @@ jobs:
           "${RUNNER_TEMP}/runtime/bin/python" -m pip check
       - name: Verify real plugin, typed public reads, identities, TLS, retries and recovery
         env:
-          CONSTRUCTS_MODULE: ${{ runner.temp }}/consumer/node_modules/@zephytiju/meridian-storage-constructs/dist/index.js
+          CONSTRUCTS_MODULE: ${{ runner.temp }}/consumer/node_modules/@juntai/meridian-storage-constructs/dist/index.js
           MERIDIAN_ACCEPTANCE_EVIDENCE_DIR: evidence
         run: |
           "${RUNNER_TEMP}/runtime/bin/ruff" check tests/integration/clickhouse
@@ -163,7 +163,7 @@ jobs:
           npm pack --ignore-scripts --pack-destination "${RUNNER_TEMP}"
           if test -n "${CONSTRUCTS_VERSION}"; then
             test "${CONSTRUCTS_VERSION}" = "$(node -p "require('./package.json').version")"
-            npm install --ignore-scripts --save-exact --prefix "${RUNNER_TEMP}/consumer" "@zephytiju/meridian-storage-constructs@${CONSTRUCTS_VERSION}"
+            npm install --ignore-scripts --save-exact --prefix "${RUNNER_TEMP}/consumer" "@juntai/meridian-storage-constructs@${CONSTRUCTS_VERSION}"
           else
             npm install --ignore-scripts --prefix "${RUNNER_TEMP}/consumer" "${RUNNER_TEMP}/zephytiju-meridian-storage-constructs-1.6.1.tgz"
           fi
@@ -174,7 +174,7 @@ jobs:
           "${RUNNER_TEMP}/runtime/bin/python" -m pip check
       - name: Verify generated configuration through public Core and PostgreSQL
         env:
-          CONSTRUCTS_MODULE: ${{ runner.temp }}/consumer/node_modules/@zephytiju/meridian-storage-constructs/dist/index.js
+          CONSTRUCTS_MODULE: ${{ runner.temp }}/consumer/node_modules/@juntai/meridian-storage-constructs/dist/index.js
           MERIDIAN_POSTGRESQL_TEST_DSN: "host=127.0.0.1 port=5432 dbname=meridian user=meridian password=meridian"
           MERIDIAN_POSTGRESQL_ENGINE_VERSION: ${{ matrix.engine }}
           MERIDIAN_ACCEPTANCE_EVIDENCE_DIR: evidence
@@ -245,11 +245,11 @@ jobs:
           npm pack --ignore-scripts --pack-destination "${RUNNER_TEMP}"
           if test -n "${CONSTRUCTS_VERSION}"; then
             test "${CONSTRUCTS_VERSION}" = "$(node -p "require('./package.json').version")"
-            npm install --ignore-scripts --save-exact --prefix "${RUNNER_TEMP}/consumer" "@zephytiju/meridian-storage-constructs@${CONSTRUCTS_VERSION}"
+            npm install --ignore-scripts --save-exact --prefix "${RUNNER_TEMP}/consumer" "@juntai/meridian-storage-constructs@${CONSTRUCTS_VERSION}"
           else
             npm install --ignore-scripts --prefix "${RUNNER_TEMP}/consumer" "${RUNNER_TEMP}/zephytiju-meridian-storage-constructs-1.6.1.tgz"
           fi
-          npm install --ignore-scripts --prefix "${RUNNER_TEMP}/legacy-consumer" @zephytiju/meridian-storage-constructs@1.1.0
+          npm install --ignore-scripts --prefix "${RUNNER_TEMP}/legacy-consumer" @juntai/meridian-storage-constructs@1.1.0
           mkdir -p evidence
           npm ls --prefix "${RUNNER_TEMP}/consumer" --json > evidence/constructs-install.json
           python -m venv "${RUNNER_TEMP}/runtime"
@@ -258,8 +258,8 @@ jobs:
           "${RUNNER_TEMP}/runtime/bin/python" -m pip check
       - name: Verify actual host processes and durable state
         env:
-          CONSTRUCTS_MODULE: ${{ runner.temp }}/consumer/node_modules/@zephytiju/meridian-storage-constructs/dist/index.js
-          LEGACY_CONSTRUCTS_MODULE: ${{ runner.temp }}/legacy-consumer/node_modules/@zephytiju/meridian-storage-constructs/dist/index.js
+          CONSTRUCTS_MODULE: ${{ runner.temp }}/consumer/node_modules/@juntai/meridian-storage-constructs/dist/index.js
+          LEGACY_CONSTRUCTS_MODULE: ${{ runner.temp }}/legacy-consumer/node_modules/@juntai/meridian-storage-constructs/dist/index.js
           MERIDIAN_POSTGRESQL_TEST_DSN: "host=127.0.0.1 port=5432 dbname=meridian user=meridian password=meridian"
           MERIDIAN_POSTGRESQL_ENGINE_VERSION: ${{ matrix.engine }}
           MERIDIAN_POSTGRESQL_PACKAGE_VERSION: ${{ matrix.adapter }}
@@ -351,4 +351,4 @@ jobs:
           cd "${RUNNER_TEMP}/consumer"
           npm init --yes
           npm install --ignore-scripts "${RUNNER_TEMP}/zephytiju-meridian-storage-constructs-1.6.1.tgz"
-          node --input-type=module -e 'import { catalogNames, version } from "@zephytiju/meridian-storage-constructs"; if (version !== "1.6.1" || catalogNames.join(",") !== "structured,object,cache,evidence,streaming") process.exit(1)'
+          node --input-type=module -e 'import { catalogNames, version } from "@juntai/meridian-storage-constructs"; if (version !== "1.6.1" || catalogNames.join(",") !== "structured,object,cache,evidence,streaming") process.exit(1)'

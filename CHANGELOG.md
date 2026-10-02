@@ -84,7 +84,7 @@
 ## 1.0.0 - 2026-08-26
 
 - Publish the authoritative TypeScript Pulumi distribution,
-  `@zephytiju/meridian-storage-constructs`.
+  `@juntai/meridian-storage-constructs`.
 - Add deterministic deployment planning and closed `meridian-config.v1` generation.
 - Cover PostgreSQL, OpenSearch, ClickHouse, Valkey, S3, OCI Distribution, and Kafka/Streaming with
   exact released compatibility pins and without runtime Adapter imports.

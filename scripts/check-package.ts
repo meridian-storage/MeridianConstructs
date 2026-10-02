@@ -20,11 +20,11 @@ const packageJson = JSON.parse(readFileSync("package.json", "utf8")) as {
   readonly workspaces?: unknown;
 };
 if (
-  packageJson.name !== "@zephytiju/meridian-storage-constructs" ||
+  packageJson.name !== "@juntai/meridian-storage-constructs" ||
   packageJson.version !== "1.6.1"
 ) {
   throw new Error(
-    "The repository must publish only @zephytiju/meridian-storage-constructs@1.6.1",
+    "The repository must publish only @juntai/meridian-storage-constructs@1.6.1",
   );
 }
 if (packageJson.workspaces !== undefined) {

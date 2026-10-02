@@ -42,7 +42,7 @@ beforeAll(async () => {
       },
       call: (args) => args.inputs,
     },
-    "@zephytiju/meridian-storage-constructs",
+    "@juntai/meridian-storage-constructs",
     "test",
     false,
   );

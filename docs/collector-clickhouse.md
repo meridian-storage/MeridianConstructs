@@ -36,7 +36,7 @@ construct a provider, start an Engine, register application Resources, or execut
    use the public Observability plugin and read the registered Resources through Meridian.
 
 ```ts
-import { createClickHouseTelemetryPlan } from "@zephytiju/meridian-storage-constructs";
+import { createClickHouseTelemetryPlan } from "@juntai/meridian-storage-constructs";
 
 const plan = createClickHouseTelemetryPlan({
   mode: "gateway", // or sidecar, sharing the workload network namespace
