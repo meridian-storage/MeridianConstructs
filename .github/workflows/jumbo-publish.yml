@@ -8,7 +8,8 @@
 # 87cc29d is the JumboBuild commit whose npm publication path runs the
 # standard build before npm pack (released artifacts carry dist) and whose
 # dependency materialization fetches private repositories with the org CI
-# app installation token (JumboBuild pull/42).
+# app installation token; 65fd5c2 also packs the clean manifest
+# (JumboBuild pulls #42-46).
 name: jumbo publish
 
 on:
@@ -21,10 +22,10 @@ on:
 
 jobs:
   jumbo-publish:
-    uses: zephytiju/JumboBuild/.github/workflows/jumbo-publish.yml@87cc29db3b49b63b7874785c72257f3d66ca0c0d
+    uses: zephytiju/JumboBuild/.github/workflows/jumbo-publish.yml@65fd5c256ed81dbade9943c430c0d1bffc9b29ba
     secrets: inherit
     with:
-      jumbobuild-ref: 87cc29db3b49b63b7874785c72257f3d66ca0c0d
+      jumbobuild-ref: 65fd5c256ed81dbade9943c430c0d1bffc9b29ba
       commit: ${{ inputs.commit }}
       # Public repository: also publish to the public registry (npm/PyPI)
       # for external consumers, driven by the jumbo-computed version.
