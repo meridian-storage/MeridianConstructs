@@ -76,8 +76,8 @@
   ],
   "license": "Apache-2.0",
   "scripts": {
-    "build": "node --import tsx scripts/clean-dist.ts && tsc -p tsconfig.build.json && node --import tsx scripts/copy-job-assets.ts",
-    "check": "npm run format:check && npm run lint && npm run typecheck && npm run contracts:check && npm run test:coverage && npm run build && npm run pack:check",
+    "build": "node --import tsx scripts/clean-dist.ts && tsc -p tsconfig.build.json && node --import tsx scripts/copy-job-assets.ts && node --import tsx scripts/check-package.ts",
+    "check": "npm run verify && npm run typecheck && npm test && npm run build",
     "contracts:check": "node --import tsx scripts/contracts.ts",
     "contracts:update": "node --import tsx scripts/contracts.ts --write",
     "format": "prettier --write .",
@@ -86,7 +86,8 @@
     "pack:check": "node --import tsx scripts/check-package.ts",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "verify": "test -f package-lock.json && git ls-files --error-unmatch package-lock.json >/dev/null && npm run format:check && npm run lint && npm run contracts:check"
   },
   "dependencies": {
     "@pulumi/pulumi": "3.257.0",
