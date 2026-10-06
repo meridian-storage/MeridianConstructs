@@ -2,10 +2,10 @@
 
 # MeridianConstructs
 
-[![CI](https://github.com/zephytiju/MeridianConstructs/actions/workflows/ci.yml/badge.svg)](https://github.com/zephytiju/MeridianConstructs/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/zephytiju/MeridianConstructs/actions/workflows/codeql.yml/badge.svg)](https://github.com/zephytiju/MeridianConstructs/actions/workflows/codeql.yml)
+[![CI](https://github.com/meridian-storage/MeridianConstructs/actions/workflows/ci.yml/badge.svg)](https://github.com/meridian-storage/MeridianConstructs/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/meridian-storage/MeridianConstructs/actions/workflows/codeql.yml/badge.svg)](https://github.com/meridian-storage/MeridianConstructs/actions/workflows/codeql.yml)
 
-`@zephytiju/meridian-storage-constructs` is the reusable TypeScript Pulumi construct library for deployment-time
+`@meridian-storage/constructs` is the reusable TypeScript Pulumi construct library for deployment-time
 Meridian Engine selection. It validates Resource placement and released Adapter capabilities,
 supports managed and external Engines through explicit provider injection, and produces a closed,
 canonical `meridian-config.v1` document plus logical Platform capability outputs.
@@ -22,7 +22,7 @@ rejection rules. Use [`createClickHouseTelemetryPlan`](docs/collector-clickhouse
 authenticated stock ingestion chain and explicit migrations for registered Meridian Resources.
 
 ```bash
-npm install @zephytiju/meridian-storage-constructs @pulumi/pulumi
+npm install @meridian-storage/constructs @pulumi/pulumi
 ```
 
 ```ts
@@ -30,7 +30,7 @@ import {
   ExternalEngine,
   getEngineProfile,
   parseResourceSelector,
-} from "@zephytiju/meridian-storage-constructs";
+} from "@meridian-storage/constructs";
 
 const profile = getEngineProfile("postgresql-postgis-local-single-primary");
 const resource = parseResourceSelector("structured:orders.records");
@@ -133,8 +133,8 @@ with coverage, compilation, and package-content inspection. See
 
 This release is locked to Meridian HLD revision 62, Catalogs and Public Interfaces revision 70,
 Engine Adapters revision 24, Kafka Adapter revision 6, and MeridianConstructs revision 63. The
-canonical repository is `zephytiju/MeridianConstructs`; the npm distribution is
-`@zephytiju/meridian-storage-constructs`.
+canonical repository is `meridian-storage/MeridianConstructs`; the npm distribution is
+`@meridian-storage/constructs`.
 
 ## License
 
@@ -162,7 +162,7 @@ jumbo build  # build + tests at the resolved closure
 The internal dependencies (the internal platform packages) are declared major-only and resolved
 from the JumboIndex — they are never fetched from the npm registry. No lock
 file is committed; the index record is the lock (Jumbo §2.4). Consumers
-likewise resolve this package (`@zephytiju/meridian-storage-constructs`) major-only from the JumboIndex. CI
+likewise resolve this package (`@meridian-storage/constructs`) major-only from the JumboIndex. CI
 verify resolves the same way via
 `zephytiju/JumboBuild/.github/actions/jumbo-resolve` before `npm ci`;
 releases are dispatch-only through `.github/workflows/jumbo-publish.yml`
