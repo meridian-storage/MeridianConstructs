@@ -1,5 +1,5 @@
 {
-  "name": "@zephytiju/meridian-storage-constructs",
+  "name": "@meridian-storage/constructs",
   "version": "1.6.1",
   "description": "Reusable TypeScript Pulumi constructs for Meridian deployment-time engine placement",
   "type": "module",
@@ -62,11 +62,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zephytiju/MeridianConstructs.git"
+    "url": "git+https://github.com/meridian-storage/MeridianConstructs.git"
   },
-  "homepage": "https://github.com/zephytiju/MeridianConstructs#readme",
+  "homepage": "https://github.com/meridian-storage/MeridianConstructs#readme",
   "bugs": {
-    "url": "https://github.com/zephytiju/MeridianConstructs/issues"
+    "url": "https://github.com/meridian-storage/MeridianConstructs/issues"
   },
   "keywords": [
     "infrastructure-as-code",

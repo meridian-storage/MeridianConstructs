@@ -24,7 +24,7 @@ The caller supplies the complete `BindingSpecV1.compatibilityPins` deployment lo
 Coordinates are validated and rendered into `org.meridian.constructs/package-lock.v1`;
 `runtimeCompatibilityPins` carries genuine Core contract/manifest expectations separately.
 These records are not runtime dependencies of
-`@zephytiju/meridian-storage-constructs`. Consumer code therefore does not load Adapter modules or
+`@meridian-storage/constructs`. Consumer code therefore does not load Adapter modules or
 Kafka.
 
 Each profile records a `profileFingerprint` and the released operation-statement fingerprints.

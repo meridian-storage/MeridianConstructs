@@ -77,7 +77,7 @@ The historical six packed projection jobs remain separate regression gates.
 To repeat the package-only fixture, install the candidate/public Constructs tarball
 in an isolated npm consumer and create a normal Python environment from
 `tests/integration/runtime-config/requirements.txt`, plus pytest 8.4.2. Set
-`CONSTRUCTS_MODULE` to that consumer's `node_modules/@zephytiju/meridian-storage-constructs/dist/index.js`,
+`CONSTRUCTS_MODULE` to that consumer's `node_modules/@meridian-storage/constructs/dist/index.js`,
 `MERIDIAN_POSTGRESQL_TEST_DSN` to a disposable database, and
 `MERIDIAN_POSTGRESQL_ENGINE_VERSION` to `16-postgis-3.4` or `17-postgis-3.5`.
 Run `python -m pytest tests/integration/runtime-config` from this checkout; the

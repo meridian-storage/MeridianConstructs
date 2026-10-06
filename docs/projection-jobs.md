@@ -101,7 +101,7 @@ import {
   durableProjectionJob,
   projectionHostFiles,
   projectionPackagePins,
-} from "@zephytiju/meridian-storage-constructs";
+} from "@meridian-storage/constructs";
 
 const spec = durableProjectionJob({
   image: ownedImageDigest,
@@ -244,13 +244,13 @@ or workspace package imports are used.
 npm ci --ignore-scripts
 npm run check
 npm pack --ignore-scripts --pack-destination /tmp
-npm install --ignore-scripts --prefix /tmp/projection-consumer /tmp/zephytiju-meridian-storage-constructs-1.3.0.tgz
-npm install --ignore-scripts --prefix /tmp/projection-legacy @zephytiju/meridian-storage-constructs@1.1.0
+npm install --ignore-scripts --prefix /tmp/projection-consumer /tmp/meridian-storage-constructs-1.3.0.tgz
+npm install --ignore-scripts --prefix /tmp/projection-legacy @meridian-storage/constructs@1.1.0
 python3.12 -m venv /tmp/projection-runtime
 /tmp/projection-runtime/bin/pip install -r tests/integration/jobs/requirements-repaired.txt pytest==8.4.2
 /tmp/projection-runtime/bin/pip check
-export CONSTRUCTS_MODULE=/tmp/projection-consumer/node_modules/@zephytiju/meridian-storage-constructs/dist/index.js
-export LEGACY_CONSTRUCTS_MODULE=/tmp/projection-legacy/node_modules/@zephytiju/meridian-storage-constructs/dist/index.js
+export CONSTRUCTS_MODULE=/tmp/projection-consumer/node_modules/@meridian-storage/constructs/dist/index.js
+export LEGACY_CONSTRUCTS_MODULE=/tmp/projection-legacy/node_modules/@meridian-storage/constructs/dist/index.js
 # Supply a disposable local PostgreSQL/PostGIS DSN through the test environment.
 /tmp/projection-runtime/bin/python -m pytest tests/integration/jobs -v
 ```
